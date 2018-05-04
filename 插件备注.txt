@@ -1,0 +1,50 @@
+插件名称：cordova.custom.plugins.openvideo
+插件描述：cordova+vitamio混合开发播放rtmp流视频
+插件版本：1.0.0
+插件平台：android
+完成日期： 2018/5/4
+负责人：彭欢
+测试进度：插件已测试
+测试流程：
+	命令行：		> cordova create Test com.intellif
+				> cd Test
+				> cordova platform add android
+				> cd platforms
+				> cordova plugin add E:\cordova_workspace\plugins\cordova.custom.plugins.openvideo
+				> cordova plugin remove cordova.custom.plugins.openvideo 
+	AndroidStudio :
+				assets\www\index.html 修改如下
+				运行。
+				
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';script-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+	
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+                <button onclick="sendMsg();">播放视频</button>
+                <script type="text/javascript">
+                     function sendMsg() {
+                     var msg = "rtmp://192.168.2.150:5119/live/MuseumLeft";
+                     openVideo.show(msg);
+                }
+                </script>
+            </div>
+        </div>
+        <script type="text/javascript" src="plugins.cordova.custom.plugins.openvideo.www/dialog.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
