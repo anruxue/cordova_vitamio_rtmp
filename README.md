@@ -1,0 +1,2 @@
+# cordova_vitamio_rtmp
+cordova+vitamio混合开发播放rtmp流视频
